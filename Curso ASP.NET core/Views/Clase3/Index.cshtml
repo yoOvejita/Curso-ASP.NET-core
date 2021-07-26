@@ -1,0 +1,56 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<p>
+    Veremos cómo se muestran: objetos, arreglos simples y listas de objetos.
+</p>
+
+<p>
+    Lo único que se necesita es tener objetos instanciados y pasados por ViewBag hasta esta vista (vea el método acción de esta vista)
+</p>
+
+<p>A continuación muestro un simple objeto que está en ViewBag.est</p>
+
+<table border="1">
+    <tr>
+        <td>ID</td>
+        <td>@ViewBag.est.id</td>
+    </tr>
+    <tr>
+        <td>Nombre</td>
+        <td>@ViewBag.est.nombre</td>
+    </tr>
+    <tr>
+        <td>Fecha de nacimiento</td>
+        <td>@ViewBag.est.fechaNac.ToString("dd/MM/yyyy")</td>
+    </tr>
+</table>
+
+<p>
+    En el caso de mostrar un arreglo, debemos entender que para mostrar su contenido debemos iterar
+</p>
+
+@foreach (var elemento in ViewBag.arreglo) { 
+    <li>@elemento</li>
+}
+
+<p>
+    Y es hacer algo similar para con una lista de objetos, sabiendo que vamos a mostrar atributos de cada objeto.
+</p>
+
+<table border="1">
+    <tr>
+        <td>ID</td>
+        <td>Nombre</td>
+        <td>Fecha de nacimiento</td>
+    </tr>
+    @foreach (var estudiante in ViewBag.listita) { 
+        <tr>
+            <td>@estudiante.id</td>
+            <td>@estudiante.nombre</td>
+            <td>@estudiante.fechaNac.ToString("dd/MM/yyyy")</td>
+        </tr>
+    }
+</table>
