@@ -1,0 +1,36 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<p>
+    Vimos el cómo crear un controlador.
+</p>
+<p>
+    No es más que dar click derecho sobre el folder Controllers y elegir Agregar > Controlador
+</p>
+
+<p>
+    En esta ventana, frente a todas las opciones con las que contamos, elegimos Controlador en blanco y le ponemos el nombre que convenga seguido del sufijo Controller; ej. PruebaController
+</p>
+
+<p>
+    Entonces se genera el código pertinente (scaffolding) y vemos la clase PruebaController con un método llamado Index; este método devuelve una respuesta del tipo Action por lo que se le llama Action Method, método acción ó simplemente Acción, es el método que contendrá alguna vista.
+</p>
+
+<p>
+    Dentro del método acción, y antes de retornar una vista, podemos ejecutar varios procesos como comunicación con la base de datos u operaciones previas.
+</p>
+
+<p>En esta clase vimos cómo se envían valores desde el Controlador a la vista usando el ViewBag</p>
+
+<p>
+    Por ejemplo (vea este controlador y su Acción llamada Index), pasaré unos cuantos datos primitivos y los veremos a continuación:
+</p>
+
+<li>@ViewBag.texto - Es un texto recibido bajo el nombre "texto"</li>
+<li>@ViewBag.numero - Es un número recibido bajo el nombre "numero"</li>
+<li>@ViewBag.boole - Es un booleano recibido bajo el nombre "boole"</li>
+<li>@ViewBag.decim - Es un double revibido bajo el nombre "decim"</li>
+<li>@ViewBag.caracter - Es un char recibido bajo el nombre "caracter"</li>
+<li>@ViewBag.arreglo - Es un intento de desplegar un arreglo de primitivas, intento que no resulta bien <a asp-controller="Clase3" asp-action="Index">¿porqué?</a></li>

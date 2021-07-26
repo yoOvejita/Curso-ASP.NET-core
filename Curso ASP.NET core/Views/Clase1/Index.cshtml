@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<p>
+    En la primer clase hablamos sobre la estructura del proyecto.
+</p>
+<p>
+    Vimos que al hablar de MVC nos referimos a una forma de ordenar
+    el proyecto, no es unico de .NET sino que puede adoptarse en cualquier sistema desarrollado bajo cualquier lenguaje y framework
+</p>
+
+<li>(M) MODELO: Donde aglomeraremos todas las clases propias de la lógica de negocios y principalmente las clases que serviran de modelos de datos (ej. para conexión de registros con base de datos o envío de formularios).</li>
+
+<li>(V) VISTA: Donde pondremos todas las páginas web diseñadas en HTML pero con potencial C#, son páginas cshtml.</li>
+
+<li>(C) CONTROLADOR: Clases que administran la interacción entre vistas y modelos, son los intermediarios, los que controlan toda la comunicación.</li>
+
+<br />
+
+<p>
+    Vimos que, al crear un proyecto nuevo de Web Application .NET core Model-View-Controller, contamos con una plantilla
+    donde tenemos dos vistas (Index y Privacy) dentro un controlador (Home).
+</p>
+
+<p>
+    Estas vistas tienen algo en común y son su menú horizontal y el pie de página, esto es porque usan una página principal
+    en común, dentro del subfolder Shared en las vistas, dejando como un pedazo de páginas a las vistas que definimos.
+</p>
+
+<p>
+    Las vistas que definimos son vistas parciales y adoptarán todo CSS, JS, etc que se manejen en el archivo _Layout.cshtml 
+    que es la estructura principal del HTML.
+</p>
+
+<p>
+    Si necesitamos insertar un CSS, JS, etc en nuestro proyecto, lo podemos poner en su apartado dedicado dentro del folder wwwroot sin miedo al éxito.
+</p>
