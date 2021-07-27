@@ -1,0 +1,52 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model Curso_ASP.NET_core.Models.Producto
+<p>
+    Vimos el tratamiento de archivos en el servidor. Principalmente sobre el envío de archivos desde el navegador al servidor; pero claro está que 
+    la idea nos advierte que podemos tener archivos en el servidor para usarlos en un navegador (por ejemplo el logotipo de la empresa) 
+</p>
+
+<p>
+    A continuación, se muestra el ejemplo de subida de una imágen al servidor, así como relacionarlo a un objeto (enviado por formulario).
+</p>
+
+<p>
+    Ojo que la imagen quedará de forma perpetua en el servidor, justo en el folder "imagenes" creado en "wwwroot", (o hasta que los desrrolladores la quiten o exista una opción en el sistema que permita eliminar los archivos), pero los objetos que creamos mediante el 
+    formulario solo durarán mientras se ejecute el servidor pues aún no lo estamos guardando en una base de datos o en un archivo externo.
+</p>
+
+<p>
+    Sin más demora, a continuación el formulario para subir una imágen (que usa un modelo distinto, ver el Model > Producto.cs). Observe el tag de apertura de form
+</p>
+
+<form asp-controller="Clase5" asp-action="subir" method="post" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td>ID</td>
+            <td><input asp-for="id"/></td>
+        </tr>
+        <tr>
+            <td>Nombre</td>
+            <td><input asp-for="nombre"/></td>
+        </tr>
+        <tr>
+            <td>Precio</td>
+            <td><input asp-for="precio"/></td>
+        </tr>
+        <tr>
+            <td>Imagen</td>
+            <td><input type="file" name="img"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit"/></td>
+        </tr>
+    </table>
+</form>
+
+<p>
+    No olvide que al poner el input de la imagen, el name debe ser el mismo nombre con el que se recibirá en el método; en este caso es "img"
+</p>

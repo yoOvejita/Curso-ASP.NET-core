@@ -2,7 +2,7 @@
 @*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
-
+@model Curso_ASP.NET_core.Models.Estudiante
 <p>
     El tema visto era sobre el envío de información desde una vista hacia un controlador, esto mediante un formulario.
 </p>
@@ -12,8 +12,27 @@
 <p>
     Simplemente agregamos los tag-helpers asp-controller y asp-action
 </p>
+
+<p>
+    Les pido atención en el campo de fecha de nacimiento para ver que no hay gran trauma en usar formas elegantes de pedir fechas, de enviarlas y, en general, de tratarlas.
+</p>
 <form asp-controller="Clase4" asp-action="Recibe" method="post">
     <table>
-
+        <tr>
+            <td>ID</td>
+            <td><input asp-for="id" /></td>
+        </tr>
+        <tr>
+            <td>Nombre</td>
+            <td><input asp-for="nombre" /></td>
+        </tr>
+        <tr>
+            <td>Fecha de nacimiento</td>
+            <td><input asp-for="fechaNac" type="date" value="1980-04-15" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="ENVIAR"/></td>
+        </tr>
     </table>
 </form>
