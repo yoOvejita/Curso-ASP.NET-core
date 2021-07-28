@@ -1,0 +1,83 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+        $('#btnEjemplo1').click(function () {
+            $.ajax({
+                type: 'GET',
+                url: '/Clase7/Ejemplo1',
+                success: function (resultado) {
+                    $('#resultado1').html(resultado);
+                }
+            });
+        });
+
+        $('#btnEjemplo2').click(function () {
+            var nombrecito = $('#name').val();
+            $.ajax({
+                type: 'GET',
+                url: '/Clase7/Ejemplo2/' + nombrecito,
+                success: function (resultado) {
+                    $('#resultado2').html(resultado);
+                }
+            });
+        });
+
+        $('#btnEjemplo3').click(function () {
+            $.ajax({
+                type: 'GET',
+                url: '/Clase7/Ejemplo3/',
+                success: function (objetito) {
+                    var cad = "ID: " + objetito.id +
+                        "<br/>Nombre: " + objetito.nombre +
+                        "<br/>Fecha de nacimiento: " + objetito.fechaNac +
+                        "<br/>";
+
+                    $('#resultado3').html(cad);
+                }
+            });
+        });
+    $('#btnEjemplo4').click(function () {
+        $.ajax({
+            type: 'GET',
+            url: '/Clase7/Ejemplo4/',
+            success: function (listita) {
+                var cad = '';
+                for (var i = 0; i < listita.length; i++) {
+                    cad += "ID: " + listita[i].id +
+                        "<br/>Nombre: " + listita[i].nombre +
+                        "<br/>Fecha de nacimiento: " + listita[i].fechaNac +
+                        "<br/>++++++++++++------------+++++++++++++++"
+                }
+                $('#resultado4').html(cad);
+            }
+        });
+    });
+
+    });
+</script>
+
+<!-- HTML de interés -->
+
+<p>Ejemplo 1: Recepción de un valor desde el servidor.</p>
+<input type="button" value="Ejemplo 1" id="btnEjemplo1" />
+<span id="resultado1"></span>
+
+<p>Ejemplo 2, envio de un valor al servidor y recepción de un valor resultante.</p>
+Inserte su nombre:
+<input type="text" id="name" />
+<input type="button" value="Ejemplo 2" id="btnEjemplo2" />
+<span id="resultado2"></span>
+
+<p>Ejemplo 3: Recepción de un objeto desde el servidor.</p>
+<input type="button" value="Ejemplo 3" id="btnEjemplo3" />
+<span id="resultado3"></span>
+
+
+<p>Ejemplo 4: Recepción de una lsta de objetos desde el servidor.</p>
+<input type="button" value="Ejemplo 4" id="btnEjemplo4" />
+<span id="resultado4"></span>
+
