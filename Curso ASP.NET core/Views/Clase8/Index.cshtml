@@ -1,0 +1,25 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@using Microsoft.AspNetCore.Http
+@using Curso_ASP.NET_core.Models 
+
+<p>Trabajando con sesiones, rescatamos dos valores desde el Index</p>
+
+<br />
+Valor de texto 'nombre' en la sesion: @Context.Session.GetString("nombre")
+<br />
+Valor del número 'numero' en la sesion: @Context.Session.GetInt32("numero")
+
+<p>Si queremos rescatar el objeto de la sesion, debemos usar nuestra clase estática Jsonificador</p>
+
+@{ 
+    Estudiante est = Jsonificador.jsonAobjeto<Estudiante>(Context.Session, "estudiante");
+}
+
+<br />
+<li>ID: @est.id</li>
+<li>Nombre: @est.nombre</li>
+<li>Fecha de nacimiento: @est.fechaNac</li>

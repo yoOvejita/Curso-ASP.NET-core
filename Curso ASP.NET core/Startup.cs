@@ -24,6 +24,7 @@ namespace Curso_ASP.NET_core
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddSession();//Con esto se puede usar sesiones (Clase8)
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +41,9 @@ namespace Curso_ASP.NET_core
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+
+            app.UseSession();//Se agrega el soporte de sesiones en el pipeline (Clase8)
+
             app.UseStaticFiles();
 
             app.UseRouting();
