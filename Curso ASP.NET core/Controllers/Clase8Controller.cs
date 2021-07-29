@@ -24,6 +24,29 @@ namespace Curso_ASP.NET_core.Controllers
                 fechaNac = new DateTime()
             };
             Jsonificador.objetoAjson(HttpContext.Session, "estudiante", est);
+
+            List<Estudiante> ests = new List<Estudiante>() {
+            new Estudiante() {
+                id = 23,
+                nombre = "Ana",
+                fechaNac = new DateTime()
+            },
+            new Estudiante() {
+                id = 23,
+                nombre = "Ana",
+                fechaNac = new DateTime()
+            },
+            new Estudiante() {
+                id = 23,
+                nombre = "Ana",
+                fechaNac = new DateTime()
+            }
+            };
+            Jsonificador.objetoAjson(HttpContext.Session, "estudiantes", ests);
+            return View();
+        }
+
+        public IActionResult Index2() {
             return View();
         }
     }

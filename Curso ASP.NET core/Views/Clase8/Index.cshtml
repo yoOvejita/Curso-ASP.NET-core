@@ -1,10 +1,9 @@
-﻿
-@*
+﻿@*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
 
 @using Microsoft.AspNetCore.Http
-@using Curso_ASP.NET_core.Models 
+@using Curso_ASP.NET_core.Models
 
 <p>Trabajando con sesiones, rescatamos dos valores desde el Index</p>
 
@@ -15,7 +14,7 @@ Valor del número 'numero' en la sesion: @Context.Session.GetInt32("numero")
 
 <p>Si queremos rescatar el objeto de la sesion, debemos usar nuestra clase estática Jsonificador</p>
 
-@{ 
+@{
     Estudiante est = Jsonificador.jsonAobjeto<Estudiante>(Context.Session, "estudiante");
 }
 
@@ -23,3 +22,27 @@ Valor del número 'numero' en la sesion: @Context.Session.GetInt32("numero")
 <li>ID: @est.id</li>
 <li>Nombre: @est.nombre</li>
 <li>Fecha de nacimiento: @est.fechaNac</li>
+
+
+<p>
+    Manejo de lista de objetos con el jsonificador
+</p>
+
+@{
+    List<Estudiante> ests = Jsonificador.jsonAobjeto<List<Estudiante>>(Context.Session, "estudiantes");
+}
+
+<br />
+
+@foreach(Estudiante estudiante in ests) {
+<div>
+    +++++++++++++++++++++++++++++++++++++++++++
+    <br />
+    <li>ID: @estudiante.id</li>
+    <li>Nombre: @estudiante.nombre</li>
+    <li>Fecha de nacimiento: @estudiante.fechaNac</li>
+</div>
+}
+
+
+<p>Finalmnte, para ver el alcance de la sesion, vaya al enalce Clase8/Index2 y corrobore que existen los valores Pepe y 77</p>

@@ -1,0 +1,10 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@using Microsoft.AspNetCore.Http
+
+<br />
+Valor de texto 'nombre' en la sesion: @Context.Session.GetString("nombre")
+<br />
+Valor del número 'numero' en la sesion: @Context.Session.GetInt32("numero")
