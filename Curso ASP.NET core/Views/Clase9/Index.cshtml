@@ -1,0 +1,27 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+<center>
+    <h3>LOGIN</h3>
+
+    <form asp-action="Login" method="post" asp-controller="Clase9">
+        <table border="1">
+            <tr>
+                <td>Usuario:</td>
+                <td><input type="text" name="user" /></td>
+            </tr>
+            <tr>
+                <td>Contraseña:</td>
+                <td><input type="password" name="pass" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="INGRESAR" /></td>
+            </tr>
+        </table>
+    </form>
+    @ViewBag.mensaje
+</center>
