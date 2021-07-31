@@ -1,6 +1,8 @@
+using Curso_ASP.NET_core.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,6 +27,9 @@ namespace Curso_ASP.NET_core
         {
             services.AddControllersWithViews();
             services.AddSession();//Con esto se puede usar sesiones (Clase8)
+
+            string cadDeConexion = Configuration.GetConnectionString("miCadenaDeConexion");
+            services.AddDbContext<MiContexto>(opciones => opciones.UseLazyLoadingProxies().UseSqlServer(cadDeConexion));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,0 +1,43 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<h3>Conexión con una Base de Datos</h3>
+<p>Paso 1: Crear una base de datos y una tabla dentro de ésta.</p>
+
+<p>Paso 2: Agregar librerías necesarias mediante NuGet</p>
+<li>EntityFrameworkCore</li>
+<li>EntityFrameworkCore.Tools</li>
+<li>EntityFrameworkCore.SqlServer</li>
+<li>EntityFrameworkCoreSqlServer.Design</li>
+<li>EntityFrameworkCore.Proxies</li>
+<li>Extensions.Configuration.json</li>
+
+<p>Paso 3: En el archivo appsettings.json agregaremos la cadena de conexión (vea lo que se agregó).</p>
+
+<p>Paso 4: Agregamos, en startup.cs, vamolres de configuración (Vease las lineas 29 y 30 de startup.cs)</p>
+<p>Paso 5: Vamos a crear la clase MiContexto para manejar los conjuntos de datos.</p>
+
+<p>Paso 6: Nos metemos con el controlador Clase10</p>
+
+
+<p>Paso 7: Vemos si funciona  ¿Se ve una tabla abajo?</p>
+
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Nombre</td>
+        <td>Precio</td>
+        <td>Imagen</td>
+    </tr>
+    @foreach(var prod in ViewBag.productitos) { 
+<tr>
+    <td>@prod.id</td>
+    <td>@prod.nombre</td>
+    <td>@prod.precio</td>
+    <td>@prod.imagen</td>
+</tr>
+    }
+
+</table>
