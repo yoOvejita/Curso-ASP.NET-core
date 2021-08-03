@@ -1,0 +1,32 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model Curso_ASP.NET_core.Models.Producto
+
+<form asp-action="Otro" asp-controller="Clase11" method="post">
+    <table>
+        <tr>
+            <td>Nombre:</td>
+            <td>
+                <input type="text" asp-for="nombre" />
+            </td>
+            </tr><tr>
+    <td>Precio:</td>
+    <td>
+        <input type="text" asp-for="precio" />
+    </td>
+</tr><tr>
+            <td>Imagen:</td>
+            <td>
+                <input type="text" asp-for="imagen" />
+            </td>
+           
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Agregar"/></td>
+        </tr>
+    </table>
+</form>
