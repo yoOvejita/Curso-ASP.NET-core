@@ -1,5 +1,4 @@
-﻿
-@*
+﻿@*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
 
@@ -9,14 +8,17 @@
         <td>Nombre</td>
         <td>Precio</td>
         <td>Imagen</td>
+        <td>Opciones</td>
     </tr>
     @foreach (var prod in ViewBag.productitos)
     {
         <tr>
-            <td>@prod.id</td>
+            <td>@prod.id</td>+
             <td>@prod.nombre</td>
             <td>@prod.precio</td>
             <td>@prod.imagen</td>
+            <td><a asp-controller="Clase12" asp-action="Editar" asp-route-id="@prod.id">Editar</a> 
+                <a asp-controller="Clase12" asp-action="Eliminar" asp-route-id="@prod.id">Eliminar</a></td>
         </tr>
     }
 

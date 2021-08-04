@@ -11,6 +11,6 @@ namespace Curso_ASP.NET_core.Models
         public MiContexto() { }
         public MiContexto(DbContextOptions<MiContexto> opciones) : base(opciones){ }
 
-        public virtual DbSet<Producto> Productos { get; set; }
+        public  DbSet<Producto> Productos { get; set; }
     }
 }

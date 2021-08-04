@@ -1,5 +1,6 @@
 ﻿using Curso_ASP.NET_core.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,8 +29,10 @@ namespace Curso_ASP.NET_core.Controllers
             var elemento2 = db.Productos
                 .Where(prod => prod.precio > 20)
                 .Select(prod => prod.nombre).ToList();
+            //Sobre procedimientos almacenados
+            ////var resultante = db.Productos.FromSqlRaw<Producto>("EXEC miProcedimiento;");
 
-            
+
             return View();
         }
         public IActionResult Agregar() {

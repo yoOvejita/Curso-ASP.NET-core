@@ -1,0 +1,32 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model Curso_ASP.NET_core.Models.Producto
+
+<form asp-controller="Clase12" asp-action="Editar" method="post">
+    <p>Editando el producto de id @(ViewBag.prod.id)</p>
+    <table>
+        <tr>
+            <td>id:</td>
+            <td><input type="hidden" asp-for="id" /></td>
+        </tr>
+        <tr>
+            <td>nombre:</td>
+            <td><input type="text" asp-for="nombre" value="@(ViewBag.prod.nombre ?? String.Empty)" /></td>
+        </tr>
+        <tr>
+            <td>precio:</td>
+            <td><input type="text" asp-for="precio" value="@(ViewBag.prod.precio ?? 0)" /></td>
+        </tr>
+        <tr>
+            <td>Imagen:</td>
+            <td><input type="text" asp-for="imagen" value="@(ViewBag.prod.imagen ?? String.Empty)" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Editar" /></td>
+        </tr>
+    </table>
+</form>
